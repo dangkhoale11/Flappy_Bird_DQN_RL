@@ -1,1 +1,71 @@
 
+# Flappy Bird AI với Deep Q-Learning (DQN)
+
+Dự án này huấn luyện một tác nhân (agent) để chơi trò chơi Flappy Bird sử dụng thuật toán Deep Q-Learning (DQN). Môi trường được xây dựng bằng `pygame`, tích hợp với `gymnasium` để tương thích với các thuật toán reinforcement learning.
+
+## 📁 Cấu trúc thư mục
+
+```
+.
+├── flappy_bird.py            # Giao diện trò chơi Flappy Bird bằng Pygame
+├── flappy_bird_env.py        # Môi trường Gym cho Flappy Bird
+├── flappy_bird_dqn.py        # Cài đặt thuật toán DQN
+├── flappy_bird_ai.py         # Chạy huấn luyện hoặc kiểm thử agent
+├── LICENSE                   # Giấy phép MIT
+└── README.md                 # Tài liệu mô tả dự án
+```
+
+## 🚀 Cách chạy
+
+### Cài đặt thư viện cần thiết
+
+```bash
+pip install pygame torch gymnasium matplotlib
+```
+
+### Huấn luyện agent
+
+```bash
+python flappy_bird_ai.py --mode train --episodes 1000
+```
+
+- `--render_freq`: hiển thị giao diện mỗi N vòng lặp (ví dụ: `--render_freq 100`).
+- `--model_path`: đường dẫn lưu model (mặc định `flappy_bird_dqn_final.pth`).
+
+### Kiểm thử agent đã học
+
+```bash
+python flappy_bird_ai.py --mode test --model_path flappy_bird_dqn_ep300.pth
+```
+
+## 🧠 DQN Agent
+
+- Mạng neural có 3 lớp fully-connected (Linear)
+- Kỹ thuật **experience replay** và **target network** được sử dụng
+- Chiến lược chọn hành động: **ε-greedy**
+
+## 🎮 Observation & Action Space
+
+- Observation: `[bird_y, velocity, pipe_top_height, pipe_bottom_height]`
+- Action: `0` (không làm gì), `1` (vỗ cánh bay lên)
+
+## 📊 Kết quả
+
+Kết quả huấn luyện được lưu thành hình ảnh:
+
+- `flappy_bird_dqn_training.png`: biểu đồ điểm số và epsilon theo thời gian
+
+## 📺 Video demo
+
+Xem video demo tại: [Flappy Bird AI DQN Demo](https://www.youtube.com/watch?v=ELjQiDEM33Q)
+
+
+## 💡 Ghi chú
+
+- Các hình ảnh trò chơi (background, bird, pipe) phải nằm trong thư mục `img/`
+- Font pixel nằm trong thư mục `font/`
+
+## ✨ Người thực hiện
+
+Tên: **[Lê Đăng Khoa]**  
+Năm: **2025**
