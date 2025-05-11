@@ -2,3 +2,4 @@ venv/
 models/
 anaconda_projects/
 __pycache__/
+.ipynb_checkpoints/
