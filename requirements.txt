@@ -1,0 +1,7 @@
+gymnasium
+pygame
+numpy 
+pandas
+matplotlib
+scikit-learn
+pytorch
